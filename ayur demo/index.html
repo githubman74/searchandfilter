@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicine Search</title>
+    <style>
+        .autocomplete-dropdown {
+            position: absolute;
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            max-height: 200px;
+            overflow-y: auto;
+            width: 300px;
+        }
+
+        .autocomplete-item {
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .autocomplete-item:hover {
+            background-color: #ddd;
+        }
+
+        .precaution-button {
+            margin: 5px;
+        }
+
+        #searchBarContainer {
+            margin-bottom: 20px;
+        }
+
+        #searchResults {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+
+        #searchResults th, #searchResults td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        #searchResults th {
+            background-color: #f2f2f2;
+        }
+
+        #searchResults tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        #searchResults tr:hover {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="searchBarContainer">
+        <label for="medicineInput">Enter Indications (separated by commas):</label>
+        <input type="text" id="medicineInput">
+        <div id="autocompleteDropdown" class="autocomplete-dropdown"></div>
+    </div>
+
+    <button id="showFiltersButton">Show Filters</button>
+    <button id="filterButton" style="display: none;">Filter</button>
+    <div id="precautionsContainer"></div>
+
+    <h2>Search Results:</h2>
+    <table id="searchResults">
+        <thead>
+            <tr>
+                <th>Medicine Name</th>
+                <th>Indications</th>
+                <th>Dosage</th>
+                <th>Precaution</th>
+                <th>Category</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
